@@ -40,8 +40,7 @@ const routes: Routes = [
       },
       {
         path: 'cart',
-        canActivate: [AdminGuard],
-        loadChildren: () => import('./cart/cart.module').then(m => m.CartModule)
+        loadChildren: () => import('./order/order.module').then(m => m.OrderModule)
       },
     ]
   },

@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter, OnChanges, SimpleChange, OnInit, DoCheck, OnDestroy } from '@angular/core';
 import { Product } from '../../../product.model';
+import { CartService } from 'src/app/core/services/cart/cart.service';
 
 @Component({
     selector: 'app-product',
@@ -13,7 +14,7 @@ export class ProductComponent implements OnInit, DoCheck, OnDestroy {
     @Output() productClicked: EventEmitter<any> = new EventEmitter<any>();
     today: Date = new Date();
 
-    constructor() {
+    constructor(private cartService: CartService) {
         console.log('1. constructor');
     }
 
@@ -35,6 +36,7 @@ export class ProductComponent implements OnInit, DoCheck, OnDestroy {
 
     addCart() {
         console.log('add to cart', this.product.id);
-        this.productClicked.emit(this.product.id);
+        // this.productClicked.emit(this.product.id);
+        this.cartService.addCart(this.product);
     }
 }

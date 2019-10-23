@@ -1,0 +1,63 @@
+<form [formGroup]="form" (ngSubmit)="saveProduct($event)">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>
+                <span>Crear Producto</span>
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <mat-label>ID</mat-label>
+                        <input matInput type="text" [formControlName]="'id'">
+                        <mat-error *ngIf="idField.hasError('required')">El id es obligatorio</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <mat-label>Titulo</mat-label>
+                        <input matInput type="text" [formControlName]="'title'">
+                        <mat-error *ngIf="titleField.hasError('required')">El titulo es obligatorio</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <mat-label>Precio</mat-label>
+                        <input matInput type="number" [formControlName]="'price'">
+                        <mat-error *ngIf="priceField.hasError('price_invalid')">El precio debe ser menor a 100
+                        </mat-error>
+                        <mat-error *ngIf="priceField.hasError('required')">El precio es obligatorio</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <mat-label>Descripcion</mat-label>
+                        <textarea matInput [formControlName]="'description'"></textarea>
+                        <mat-error *ngIf="descField.hasError('required')">La descripcion es obligatoria</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs">
+                    <mat-form-field>
+                        <mat-label>Imagen</mat-label>
+                        <input matInput type="text" [formControlName]="'image'" />
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" [disabled]="form.invalid" type="submit">
+                <mat-icon>save</mat-icon>
+                <span>Guardar</span>
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</form>

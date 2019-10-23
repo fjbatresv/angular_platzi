@@ -1,37 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
 .container {
-    width: 100%;
-    padding-right: 0px;
-    padding-left: 0px;
-    margin-right: auto;
-    margin-left: auto;
+  width: 100%;
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: auto;
+  margin-left: auto;
 }
+
 .product-grid {
-    display: grid;
-    grid-gap: 50px 20px;
-    grid-template-columns: repeat(1, 1fr);
+  display: grid;
+  grid-gap: 50px 20px;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.full-width {
+  width: 100%;
 }
 
 @media(min-width: 576px) {
-    .product-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-    .container {
-        max-width: 1110px;
-        padding-right: 16px;
-        padding-left: 16px;
-    }
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .container {
+    max-width: 1110px;
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-top: 16px;
+  }
 }
 
 @media(min-width: 1080px) {
-    .product-grid {
-        grid-template-columns: repeat(6, 1fr);
-    }
-    .container {
-        max-width: 1110px;
-        padding-right: 16px;
-        padding-left: 16px;
-    }
+  .product-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .container {
+    max-width: 1110px;
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-top: 16px;
+  }
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
