@@ -6,14 +6,14 @@ export const environment = {
   production: false,
   url_api: 'https://platzi-store.herokuapp.com',
   firebase: {
-    apiKey: 'AIzaSyDRt82sffO5WqGTSATrXEKRyRrIMKWGcX8',
-    authDomain: 'platzistore-c73c6.firebaseapp.com',
-    databaseURL: 'https://platzistore-c73c6.firebaseio.com',
-    projectId: 'platzistore-c73c6',
-    storageBucket: 'platzistore-c73c6.appspot.com',
-    messagingSenderId: '190420962985',
-    appId: '1:190420962985:web:2804bc583da4071f7ae3b8',
-    measurementId: 'G-72MS64SWJY'
+    apiKey: '***************************************',
+    authDomain: '***************************************',
+    databaseURL: '***************************************',
+    projectId: '***************************************',
+    storageBucket: '***************************************',
+    messagingSenderId: '***************************************',
+    appId: '***************************************',
+    measurementId: '***************************************'
   }
 };
 
