@@ -30,17 +30,19 @@ const routes: Routes = [
       },
       {
         path: 'products',
-        canActivate: [AdminGuard],
         loadChildren: () => import('./products/products.module').then(m => m.ProductsModule)
       },
       {
         path: 'contact',
-        canActivate: [AdminGuard],
         loadChildren: () => import('./contact/contact.module').then(m => m.ContactModule)
       },
       {
         path: 'cart',
         loadChildren: () => import('./order/order.module').then(m => m.OrderModule)
+      },
+      {
+        path: 'auth',
+        loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
       },
     ]
   },
