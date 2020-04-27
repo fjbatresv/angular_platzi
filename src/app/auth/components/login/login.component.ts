@@ -42,6 +42,13 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  loginRest() {
+    this.authService.loginRestApi('nicolas@nicola.com', '123456')
+    .subscribe(data => {
+      console.log('loginRest', data);
+    });
+  }
+
   get emailField() {
     return this.form.get('email');
   }

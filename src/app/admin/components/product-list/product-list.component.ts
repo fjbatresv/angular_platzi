@@ -10,9 +10,9 @@ import { ProductListDataSource, ProductListItem } from './product-list-datasourc
   styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements AfterViewInit, OnInit {
-  @ViewChild(MatPaginator, {static: false}) paginator: MatPaginator;
-  @ViewChild(MatSort, {static: false}) sort: MatSort;
-  @ViewChild(MatTable, {static: false}) table: MatTable<ProductListItem>;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatTable) table: MatTable<ProductListItem>;
   dataSource: ProductListDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */

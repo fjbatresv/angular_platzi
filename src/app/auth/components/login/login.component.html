@@ -29,8 +29,12 @@
         <mat-card-actions>
             <button mat-raised-button color="primary" [disabled]="form.invalid" type="submit">
                 <mat-icon>save</mat-icon>
-                <span>Guardar</span>
+                <span>Ingresar</span>
             </button>
+            <button mat-raised-button color="primary" [disabled]="form.invalid" type="button" (click)="loginRest()">
+              <mat-icon>save</mat-icon>
+              <span>Ingresar con REST</span>
+          </button>
         </mat-card-actions>
     </mat-card>
 </form>
