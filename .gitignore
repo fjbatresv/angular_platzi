@@ -1,6 +1,6 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 # Environments
-/environments
+/src/environments
 # compiled output
 /dist
 /tmp
@@ -10,6 +10,7 @@
 
 # dependencies
 /node_modules
+package-lock.json
 
 # profiling files
 chrome-profiler-events*.json
