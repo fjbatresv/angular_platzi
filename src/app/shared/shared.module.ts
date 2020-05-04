@@ -8,6 +8,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '../material/material.module';
+import { QuicklinkModule } from 'ngx-quicklink';
+import { FibonacciPipe } from './pipes/fibonacci.pipe';
 
 
 
@@ -17,18 +19,21 @@ import { MaterialModule } from '../material/material.module';
     HighlightDirective,
     HeaderComponent,
     FooterComponent,
+    FibonacciPipe,
   ],
   exports: [
     ExponentialPipe,
     HighlightDirective,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    FibonacciPipe
   ],
   imports: [
     CommonModule,
     RouterModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    QuicklinkModule
   ]
 })
 export class SharedModule { }

@@ -17,6 +17,9 @@ import { environment } from 'src/environments/environment';
 import * as Sentry from '@sentry/browser';
 import { AuthInterceptor } from './auth.interceptor';
 
+import { QuicklinkModule } from 'ngx-quicklink';
+import { ServiceWorkerModule } from '@angular/service-worker';
+
 if (environment.production) {
   Sentry.init({
     dsn: environment.url_sentry,
@@ -25,7 +28,7 @@ if (environment.production) {
 
 @Injectable()
 export class SentryErrorHandler implements ErrorHandler {
-  constructor() {}
+  constructor() { }
   handleError(error) {
     const eventId = Sentry.captureException(error.originalError || error);
     Sentry.showReportDialog({ eventId });
@@ -34,7 +37,8 @@ export class SentryErrorHandler implements ErrorHandler {
 @NgModule({
   declarations: [AppComponent, LayoutComponent],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     AppRoutingModule,
     SharedModule,
     FormsModule,
@@ -44,6 +48,7 @@ export class SentryErrorHandler implements ErrorHandler {
     AngularFireModule.initializeApp(environment.firebase, 'PlatziStore'),
     AngularFireAuthModule,
     AngularFireStorageModule,
+    QuicklinkModule,
   ],
   providers: [
     {
@@ -58,4 +63,4 @@ export class SentryErrorHandler implements ErrorHandler {
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
